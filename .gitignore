@@ -1,0 +1,3 @@
+git rm -r --cached Academy.txt
+git add.
+git commit -m"Academy.txtを削除"
