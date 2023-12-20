@@ -2,21 +2,20 @@
 #include <stdlib.h>
 #include <time.h>
 
-
 // ソート関数宣言
 void SortArray(int array[], int array_size)
 {
     int valueA = 0;
     int valueB = 0;
     // ループ1
-    for(int i = 0; i < array_size; i++)
+    for (int i = 0; i < array_size; i++)
     {
         // ループ2
-        for(int j = array_size - 1; j >= i + 1; j--)
+        for (int j = array_size - 1; j >= i + 1; j--)
         {
             valueA = array[i];
             valueB = array[j];
-            if(valueA > valueB)
+            if (valueA > valueB)
             {
                 // 入れ替え処理
                 array[i] = valueB;
@@ -29,19 +28,35 @@ void SortArray(int array[], int array_size)
 int main()
 {
     // 配列宣言
-    int data[100] = {0};
+    int data[100] = { 0 };
     // 配列のサイズ取得
     int data_size = sizeof(data) / sizeof(data[0]);
     // 現在時刻の情報で乱数を初期化
     srand((unsigned int)time(NULL));
     // 乱数取得ループ
-    for(int i = 0; i < data_size; i++)
+    for (int i = 0; i < data_size; i++)
     {
         data[i] = rand() % 100 + 1;
     }
 
+    // ソート前出力ループ
+    printf("ソート前：\ndata = {");
+    for (int i = 0; i < data_size; i++)
+    {
+        printf("%d,", data[i]);
+    }
+    printf("}\n\n");
+
     // ソート関数呼び出し
     SortArray(data, data_size);
+
+    // ソート後出力ループ
+    printf("ソート後：\ndata = {");
+    for (int i = 0; i < data_size; i++)
+    {
+        printf("%d,", data[i]);
+    }
+    printf("}\n\n");
 
     int target = 50;
     int result = -1;
@@ -49,18 +64,21 @@ int main()
     int right = data_size - 1;
     int mid = 0;
 
+    // ターゲット表示
+    printf("target = %d\n", target);
+
     // ループ開始
-    while(left < right)
+    while (left < right)
     {
         // データの真ん中を求める
         mid = (left + right) / 2;
         // 発見時
-        if(data[mid] == target)
+        if (data[mid] == target)
         {
             result = mid;
             break;
         }
-        else if(data[mid] < target)
+        else if (data[mid] < target)
         {
             left = mid + 1;
         }
@@ -72,13 +90,13 @@ int main()
     }
 
     // result Nullチェック
-    if(result >= 0)
+    if (result >= 0)
     {
-        printf("targetのインデックスは%dです", result);
+        printf("targetのインデックスは%dです\n", result);
     }
     else
     {
-        printf("targetは見つかりませんでした");
+        printf("targetは見つかりませんでした\n");
     }
 
     return 0;

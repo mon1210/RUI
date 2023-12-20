@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-/// @brief 隣り合わせの数字と比べて大きい物を後ろに
-/// @return 
+// 隣り合わせの数字と比べて大きい物を後ろに
 
 int main()
 {
@@ -11,6 +10,7 @@ int main()
     int data[100] = {0};
     // データのサイズ取得
     int data_size = sizeof(data) / sizeof(data[0]);
+
     // 現在の時刻の情報で乱数を初期化
     srand((unsigned int)time(NULL));
 
@@ -19,6 +19,14 @@ int main()
     {
         data[i] = rand() % 100 + 1;
     }
+
+    // ソート前出力ループ
+    printf("ソート前：\ndata = {");
+    for(int i = 0; i < data_size; i++)
+    {
+        printf("%d,",data[i]);
+    }
+    printf("}\n\n");
 
     int valueA = 0;
     int valueB = 0;
@@ -44,11 +52,13 @@ int main()
         }
     }
 
-    // 出力ループ
+    // ソート後出力ループ
+    printf("ソート後：\ndata = {");
     for(int i = 0; i < data_size; i++)
     {
-        printf("%d\n", data[i]);
+        printf("%d,",data[i]);
     }
+    printf("}\n");
 
     return 0;
 
