@@ -29,9 +29,25 @@ int main()
     // 配列のサイズ取得
     int data_size = sizeof(data) / sizeof(data[0]);
 
+    // シャッフル前配列表示
+    printf("シャッフル前：\ndata = {");
+    for(int i = 0; i < data_size; i++)
+    {
+        printf("%d,",data[i]);
+    }
+    printf("}\n");
+
     // 配列シャッフル用関数呼び出し
     Shuffle(data, data_size);
-    
+
+    // シャッフル後配列表示
+    printf("シャッフル後：\ndata = {");
+    for(int i = 0; i < data_size; i++)
+    {
+        printf("%d,",data[i]);
+    }
+    printf("}\n\n");
+
     int result = -1;
     int target = 5;
     // ループ開始
@@ -43,7 +59,7 @@ int main()
             result = i;
 
             // targetのインデックスを出力
-            printf("targetのindexは%dです。",result);
+            printf("targetのindexは%dです。\n",result);
         }
         
     }
