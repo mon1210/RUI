@@ -14,8 +14,8 @@ vector<char> stack_;
 // データ追加関数
 void Push(char str)
 {
-    // データを配列の最後尾に要素を構築し、代入
-    stack_.emplace_back(str);
+    // データを配列の先頭に代入
+    stack_.insert(stack_.begin(), str);
 }
 
 
