@@ -63,7 +63,7 @@ char Dequeue()
 // 配列表示関数
 void ForPrintVal()
 {
-    int num;
+    int num = 0;
     // キューの中のデータの個数を計算
     // tailがheadよりも前にあるとき
     if (tail < head)
@@ -90,16 +90,22 @@ void ForPrintVal()
 int main()
 {
     // データ追加 ==================================
+    printf("Enqueue => A\n");
     Enqueue('A');   // 1
     ForPrintVal();
+    printf("Enqueue => B\n");
     Enqueue('B');   // 2
     ForPrintVal();
+    printf("Enqueue => C\n");
     Enqueue('C');   // 3
     ForPrintVal();
+    printf("Enqueue => D\n");
     Enqueue('D');   // 4
     ForPrintVal();
+    printf("Enqueue => E\n");
     Enqueue('E');   // 5
     ForPrintVal();
+    printf("Enqueue => F\n");
     Enqueue('F');   // エラーデバッグ用
 
     printf("\n");
