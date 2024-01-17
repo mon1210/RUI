@@ -68,16 +68,22 @@ void ForPrintVal()
 int main()
 {
     // データ追加 ===========================
+    printf("Push => A\n");
     Push('A');  // 1
     ForPrintVal();
+    printf("Push => B\n");
     Push('B');  // 2
     ForPrintVal();
+    printf("Push => C\n");
     Push('C');  // 3
     ForPrintVal();
+    printf("Push => D\n");
     Push('D');  // 4
     ForPrintVal();
+    printf("Push => E\n");
     Push('E');  // 5
     ForPrintVal();
+    printf("Push => F\n");
     Push('F');  // エラーデバッグ用
 
     printf("\n");
